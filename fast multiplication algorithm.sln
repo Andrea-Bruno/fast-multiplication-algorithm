@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fast multiplication algorithm", "fast multiplication algorithm\fast multiplication algorithm.csproj", "{0A9B9518-E421-46C6-AE9F-307594A2417E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A9B9518-E421-46C6-AE9F-307594A2417E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9B9518-E421-46C6-AE9F-307594A2417E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9B9518-E421-46C6-AE9F-307594A2417E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9B9518-E421-46C6-AE9F-307594A2417E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1DA304F-D0E7-446A-A0FE-EA52038EFA09}
+	EndGlobalSection
+EndGlobal
