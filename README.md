@@ -1,5 +1,14 @@
 # AI Accelerator
 
+## About the Author
+
+Andrea Bruno, born in 1972, is an independent inventor and researcher with a lifelong passion for mathematics, physics, and artificial intelligence. Although he did not pursue formal academic qualifications, his intellectual aptitude has been recognized since an early age. During a physics examination in technical school, his professor publicly referred to him as a genius for solving a complex problem in an unconventional and elegant way. Later, Andrea achieved a perfect score of 160 on an IQ test, further affirming his natural analytical capabilities.
+
+In the 1980s, he began developing early artificial intelligence algorithms, including a chess engine that was published in the magazine *CHIP*. Unlike traditional brute-force engines, his software was powered by a self-designed AI logic, demonstrating a pioneering approach to intelligent computation.
+
+The mathematical and algorithmic work presented in this repository did not require extensive effort or formal tools. In fact, the core innovation—the fast multiplication algorithm—was conceived intuitively during sleep, without the need for pen, paper, or prolonged analysis. This intuitive process reflects Andrea’s unique cognitive style and his ability to internalize and synthesize complex systems with minimal external input.
+
+Through this project, Andrea Bruno aims not only to contribute to the advancement of AI computation, but also to establish a clear and enduring association between his name and the intellectual property he has created.
 
 ## Project Vision
 
