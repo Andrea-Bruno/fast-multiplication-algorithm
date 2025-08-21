@@ -282,8 +282,10 @@ In the computation, lines without offset placeholders for the pattern are comple
 
 |     |     |     |     |     |     |
 |-----|-----|-----|-----|-----|-----|
-| **1** | 0 | 1 | 0 | 0 | 0 |
-| 0 | **1** | 0 | 1 | 0 | 0 |
+| **1** | **0** | **1** | 0 | 0 | 0 |
+| 0 | **1** | **0** | **1** | 0 | 0 |
+
+Vertical scan result: 1 1 1 1 0 0 (i.e. 15 : [1] + [2] + [4] + [8] + [0] + [0] )
 
 ### Result Composition via Vertical Scan and Binary Addition
 
