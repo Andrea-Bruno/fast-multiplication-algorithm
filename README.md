@@ -265,6 +265,8 @@ This means:
 
 The updated matrix below reflects this logic:
 
+|     |     |     |     |     |     |
+|-----|-----|-----|-----|-----|-----|
 | **1** | 0 | 1 | 0 | 0 | 0 |
 | 0 | **1** | 0 | 1 | 0 | 0 |
 | 0 | 0 | **0** | 0 | 0 | 0 |
@@ -275,4 +277,30 @@ The updated matrix below reflects this logic:
 > Note: The pattern `101` is applied from left to right on each active row, starting at the offset position indicated by the diagonal. The LFSR mechanism ensures efficient bit propagation without traditional arithmetic operations.
 
 This horizontal propagation model is central to the MPU’s architecture, enabling fast and energy-efficient multiplication through spatial logic rather than iterative computation.
+
+In the computation, lines without offset placeholders for the pattern are completely irrelevant and can be excluded. This way, we can simplify the logic and reduce the matrix to:
+
+|     |     |     |     |     |     |
+|-----|-----|-----|-----|-----|-----|
+| **1** | 0 | 1 | 0 | 0 | 0 |
+| 0 | **1** | 0 | 1 | 0 | 0 |
+
+### Result Composition via Vertical Scan and Binary Addition
+
+Once the pattern has been propagated horizontally across the active rows—starting at the offset positions defined by the offset matrix—the final step is to **compose the result** by scanning the matrix **vertically**, column by column.
+
+Each column represents a bit position in the final binary result. During the vertical scan:
+- If a column contains a single `1`, that bit is directly included in the result.
+- If a column contains **multiple `1`s**, they are **combined using binary addition**, and the excess is **carried over** to the next column on the right.
+
+This behavior reflects the fundamental principle of binary arithmetic:  
+> Two `1`s in the same column produce a `0` in that column and a `1` in the column to the right (carry bit), since each position in binary represents a power of two.
+
+For example:
+- Column 2 has two `1`s → binary sum is `10` → `0` in column 2, `1` carried to column 3.
+- Column 3 now receives the carry and is processed similarly.
+
+This process continues across all columns, resulting in a final binary number that represents the product of the two original operands.
+
+The vertical scan and carry logic can be implemented using simple **adder circuits** or **bitwise accumulation logic**, depending on the hardware architecture. This final step completes the multiplication without requiring traditional arithmetic operations, relying instead on spatial logic and binary principles.
 
