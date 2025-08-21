@@ -210,10 +210,41 @@ The combination of offset-based activation and LFSR-driven propagation allows th
 
 The following is a purely minimalist example to simplify the operation as much as possible. Suppose we want to handle multiplications with numbers of up to 3 bits, so we need a 6-bit matrix (3 x 2 = 6).
 
+| **0** | 0 | 0 | 0 | 0 | 0 |
+| 0 | **0** | 0 | 0 | 0 | 0 |
+| 0 | 0 | **0** | 0 | 0 | 0 |
+| 0 | 0 | 0 | **0** | 0 | 0 |
+| 0 | 0 | 0 | 0 | **0** | 0 |
+| 0 | 0 | 0 | 0 | 0 | **0** |
+
+In the table above, the diagonal representing the "offset matrix" is highlighted in bold. This indicates the rows where the horizontal brush will begin drawing the pattern—specifically at the positions marked with a one.
+
+It is important to note that the binary representation adopted in this project places the most significant bit (MSB)—the bit representing the highest unit—on the **left**, which is visually opposite to the standard decimal notation where the least significant digit appears on the right. This left-to-right binary layout is used consistently throughout the documentation and matrix visualizations.
+
+In our example, we aim to multiply 3 and 5, whose binary representations—following this convention—are:
+- **3 → 110**
+- **5 → 101**
+
+NOTE:
+
+While this project adopts a left-to-right binary layout—placing the most significant bit (MSB) on the left for visual and structural clarity—it is important to note that the system is fully compatible with the conventional right-to-left binary format, where the least significant bit (LSB) appears on the right.
+
+The computational model and matrix logic are inherently symmetrical, meaning that the algorithm can operate correctly regardless of the chosen bit orientation. Whether the binary representation places the units on the left or the right, the offset detection and horizontal brush propagation mechanisms remain valid, provided that the interpretation of bit positions is consistent throughout the system.
+
+This flexibility allows for seamless integration with existing standards and hardware architectures, and ensures that the algorithm can be adapted to various implementation environments without loss of functionality or precision.
+
+### Offset Matrix Initialization
+
+In our example, both 3 and 5 have the same number of bits set to 1 (two bits each). Therefore, it is irrelevant which operand is selected as the "offset matrix." For simplicity, we choose the first operand—**3**—and map its binary representation onto the diagonal of the matrix.
+
+Using the left-to-right binary convention adopted in this project, the number **3** is represented as `110`. We place these bits along the diagonal of a 6×6 matrix, corresponding to the base model designed to support 3-bit operands (matrix size = 3 × 2 = 6).
+
+The updated matrix is shown below, with the diagonal cells reflecting the binary pattern of the offset matrix:
+
+| **1** | 0 | 0 | 0 | 0 | 0 |
+| 0 | **1** | 0 | 0 | 0 | 0 |
+| 0 | 0 | **0** | 0 | 0 | 0 |
 | 0 | 0 | 0 | 0 | 0 | 0 |
-|---|---|---|---|---|---|
 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 0 | 0 | 0 | 0 | 0 | 0 |
-| 0 | 0 | 0 | 0 | 0 | 0 |
-| 0 | 0 | 0 | 0 | 0 | 0 |
+
