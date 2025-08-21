@@ -252,30 +252,27 @@ The updated matrix is shown below, with the diagonal cells reflecting the binary
 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 0 | 0 | 0 | 0 | 0 | 0 |
 
-### Pattern Propagation Using LFSR Technology (Single-Bit Distribution)
+### Pattern Propagation Using LFSR Technology (Horizontal Activation)
 
-In our example, both operands—3 and 5—have two bits set to 1, so either can be selected as the "offset matrix." We choose **3** (binary `110`) and place its bits along the diagonal of the 6×6 matrix. The remaining operand, **5** (binary `101`), is treated as the **pattern** to be propagated.
+In our example, both operands—3 and 5—have two bits set to 1, so either can be selected as the "offset matrix." We choose **3** (binary `110`) and place its bits along the diagonal of the 6×6 matrix. The remaining operand, **5** (binary `101`), is treated as the **pattern**.
 
-Each row in the matrix corresponds to a bit position in the offset matrix. Where a diagonal cell contains a `1`, it signals that the row is active and the horizontal brush must initiate at that offset. Instead of replicating the entire pattern across the row, the system distributes the bits of the pattern **vertically**, assigning one bit per active row.
+Each row in the matrix corresponds to a bit position in the offset matrix. Where a diagonal cell contains a `1`, it signals that the row is active and the horizontal brush must initiate at that offset. The brush then propagates the **entire pattern** horizontally from that position, using **Shift Register technology**, such as **Linear-Feedback Shift Registers (LFSR)**.
 
 This means:
-- The first active row receives the first bit of the pattern (`1`),
-- The second active row receives the second bit (`0`),
-- The third active row receives the third bit (`1`), and so on.
+- The pattern `101` is applied **horizontally** on each active row.
+- The starting column (offset) is determined by the position of the `1` bit in the offset matrix.
+- Inactive rows (where the offset bit is `0`) remain untouched, contributing to thermal efficiency.
 
-The propagation is performed using **Shift Register technology**, such as **Linear-Feedback Shift Registers (LFSR)**, which efficiently shift and place the bit at the correct offset position on each row.
+The updated matrix below reflects this logic:
 
-The updated matrix below 
-
-|     |     |     |     |     |     |
-|-----|-----|-----|-----|-----|-----|
-| **1** | **0** | **1** | 0 | 0 | 0 |
-| 0 | **1** | **0** | **1** | 0 | 0 |
-| 0 | 0 | 0 | 0| 0 | 0 |
+| **1** | 0 | 1 | 0 | 0 | 0 |
+| 0 | **1** | 0 | 1 | 0 | 0 |
+| 0 | 0 | **0** | 0 | 0 | 0 |
 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 0 | 0 | 0 | 0 | 0 | 0 |
 
-> Note: The pattern `101` is applied using LFSR logic, which shifts and feeds back bits across each active row. The offset determines the starting column, and the pattern is replicated accordingly.
+> Note: The pattern `101` is applied from left to right on each active row, starting at the offset position indicated by the diagonal. The LFSR mechanism ensures efficient bit propagation without traditional arithmetic operations.
 
-This mechanism allows the MPU to perform large-number multiplications by combining spatial activation (via the offset matrix) with bitstream propagation (via LFSR), resulting in a highly parallel and thermally efficient architecture.
+This horizontal propagation model is central to the MPU’s architecture, enabling fast and energy-efficient multiplication through spatial logic rather than iterative computation.
+
