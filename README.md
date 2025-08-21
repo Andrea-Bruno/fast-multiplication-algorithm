@@ -211,6 +211,17 @@ The combination of offset-based activation and LFSR-driven propagation allows th
 The following is a purely minimalist example to simplify the operation as much as possible. Suppose we want to handle multiplications with numbers of up to 3 bits, so we need a 6-bit matrix (3 x 2 = 6).
 
 
+|     |     |     |     |     |     |
+|-----|-----|-----|-----|-----|-----|
+| 0   | 0   | 0   | 0   | 0   | 0   |
+| 0   | 0   | 0   | 0   | 0   | 0   |
+| 0   | 0   | 0   | 0   | 0   | 0   |
+| 0   | 0   | 0   | 0   | 0   | 0   |
+| 0   | 0   | 0   | 0   | 0   | 0   |
+| 0   | 0   | 0   | 0   | 0   | 0   |
+
+
+|     |     |     |     |     |     |
 |-----|-----|-----|-----|-----|-----|
 | **0** | 0 | 0 | 0 | 0 | 0 |
 | 0 | **0** | 0 | 0 | 0 | 0 |
@@ -243,6 +254,7 @@ Using the left-to-right binary convention adopted in this project, the number **
 
 The updated matrix is shown below, with the diagonal cells reflecting the binary pattern of the offset matrix:
 
+|     |     |     |     |     |     |
 |-----|-----|-----|-----|-----|-----|
 | **1** | 0 | 0 | 0 | 0 | 0 |
 | 0 | **1** | 0 | 0 | 0 | 0 |
