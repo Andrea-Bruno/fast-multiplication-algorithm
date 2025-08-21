@@ -1,6 +1,6 @@
 # Exclusive Copyright License – Andrea Bruno
 
-**Copyright © Andrea Bruno, [Year]**  
+**Copyright © Andrea Bruno, 2020**  
 All rights reserved.
 
 This project, including its source code, algorithms, documentation, and all intellectual concepts contained herein, is protected under copyright law pursuant to:
