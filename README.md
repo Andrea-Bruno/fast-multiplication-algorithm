@@ -85,6 +85,14 @@ Therefore, the code presented here should be interpreted as a mathematical demon
 
 ```charp
 
+		/*
+		* Bruno Multiplication Algorithm
+		* Invented and authored by Andrea Bruno
+		* This algorithm represents a novel approach to fast integer multiplication,
+		* optimized for future deployment on dedicated hardware architectures.
+		* All rights reserved under exclusive copyright.
+		*/
+
 		public static byte[] Multiplication(byte[] multiplicand, byte[] multiplier)
 		{
 			//============ initialization
@@ -125,3 +133,17 @@ Therefore, the code presented here should be interpreted as a mathematical demon
 		}
 
 ```
+
+### Algorithmic Efficiency and Hardware Implications
+
+It is important to clarify that the effectiveness of an algorithm is not necessarily measured by its computational complexity or the difficulty of its implementation. Instead, true efficiency lies in how well the algorithm aligns with the architecture on which it is executed, and how it minimizes resource consumption while maximizing performance.
+
+The fast multiplication algorithm presented here, when transposed onto dedicated hardware, can be executed with minimal computational effort. In its optimized form, the algorithm does not require iterative or force-based computation. Instead, it operates by placing the input arrays (`byte[] multiplicand`, `byte[] multiplier`) into memory in a specific configuration, which will be described in detail in the following sections of this document. The result can then be retrieved through a single linear scan of the memory as a bitstream, effectively bypassing traditional arithmetic operations.
+
+This approach leverages the principle that, on custom hardware free from byte-segmented constraints, computation can be redefined as structured memory access. Unlike conventional CPUs—where processing is segmented into 8, 16, 32, or 64-bit units, introducing architectural overhead—the dedicated hardware envisioned for this algorithm allows for seamless bit-level manipulation. This results in a dramatically simplified execution path, enhanced performance, and significant energy savings.
+
+Therefore, the current CPU-based implementation serves as a mathematical demonstration of the algorithm’s logic. The ultimate goal is to deploy this logic on specialized hardware where its full potential can be realized, transforming multiplication from a computational task into a deterministic memory operation.
+
+As may already be evident, when transposed onto dedicated hardware, this algorithm can be executed without the use of traditional computational operators or arithmetic calculations. This architectural simplification significantly reduces the required circuitry and minimizes clock cycles, resulting in maximum performance with optimal energy efficiency.
+
+By eliminating the need for complex processing units and iterative logic, the algorithm enables a streamlined execution model that relies solely on structured memory placement and deterministic bit-level access. This not only enhances speed and scalability, but also aligns with the principles of low-power, high-throughput computing—making it particularly suitable for next-generation AI acceleration platforms.
