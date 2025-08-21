@@ -210,17 +210,6 @@ The combination of offset-based activation and LFSR-driven propagation allows th
 
 The following is a purely minimalist example to simplify the operation as much as possible. Suppose we want to handle multiplications with numbers of up to 3 bits, so we need a 6-bit matrix (3 x 2 = 6).
 
-
-|     |     |     |     |     |     |
-|-----|-----|-----|-----|-----|-----|
-| 0   | 0   | 0   | 0   | 0   | 0   |
-| 0   | 0   | 0   | 0   | 0   | 0   |
-| 0   | 0   | 0   | 0   | 0   | 0   |
-| 0   | 0   | 0   | 0   | 0   | 0   |
-| 0   | 0   | 0   | 0   | 0   | 0   |
-| 0   | 0   | 0   | 0   | 0   | 0   |
-
-
 |     |     |     |     |     |     |
 |-----|-----|-----|-----|-----|-----|
 | **0** | 0 | 0 | 0 | 0 | 0 |
@@ -263,3 +252,25 @@ The updated matrix is shown below, with the diagonal cells reflecting the binary
 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 0 | 0 | 0 | 0 | 0 | 0 |
 
+### Offset Matrix and Pattern Propagation via LFSR
+
+In our example, both operands—3 and 5—have two bits set to 1, so either can be selected as the "offset matrix." For simplicity, we choose **3** (binary `110`) and place its bits along the diagonal of the 6×6 matrix. The remaining operand, **5** (binary `101`), is treated as the **pattern** to be propagated.
+
+Each row in the matrix corresponds to a bit position in the offset matrix. Where a diagonal cell contains a `1`, it signals that the row is active and the horizontal brush must initiate at that offset. The brush then propagates the pattern horizontally using **Shift Register technology**, specifically a **Linear-Feedback Shift Register (LFSR)**.
+
+The LFSR replicates the bit pattern of the second operand (`101`) across each active row, starting from the offset position indicated by the diagonal. This propagation is deterministic and efficient, allowing the multiplication logic to be executed without traditional arithmetic operations.
+
+The updated matrix below shows the diagonal offset flags in bold, and illustrates how the pattern would be applied horizontally on active rows:
+
+|     |     |     |     |     |     |
+|-----|-----|-----|-----|-----|-----|
+| **1** | 1 | 0 |     |     |     |
+| 0 | **1** | 0 | 1 |     |     |
+| 0 | 0 | **0** |     |     |     |
+| 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 0 | 0 | 0 |
+
+> Note: The pattern `101` is applied using LFSR logic, which shifts and feeds back bits across each active row. The offset determines the starting column, and the pattern is replicated accordingly.
+
+This mechanism allows the MPU to perform large-number multiplications by combining spatial activation (via the offset matrix) with bitstream propagation (via LFSR), resulting in a highly parallel and thermally efficient architecture.
