@@ -185,3 +185,35 @@ It is conceivable that a team of highly qualified mathematicians could study thi
 The author of this algorithm openly declares that the mathematical foundations and logical principles underlying the algorithm—not the algorithm itself—may serve as a scientific basis for developing techniques capable of compromising RSA encryption. Given that RSA’s security relies on the absence of an efficient method for factoring large prime products, any breakthrough in this domain could have serious implications for global cybersecurity.
 
 For this reason, and to avoid potential harm to the public and critical infrastructure, the author has chosen not to disclose the core theoretical constructs that inspired the algorithm. The decision reflects a commitment to responsible innovation and the ethical handling of sensitive mathematical insights that may, if misused, undermine the integrity of encrypted communication systems worldwide.
+
+## Structural Design of the Multi-Precision Unit (MPU)
+
+The foundational architecture of the MPU is based on a square bit matrix embedded directly onto the chip. This matrix serves as the computational substrate for executing large-number multiplications with exceptional efficiency.
+
+The matrix is strictly square, meaning the X and Y axes must be of equal length. Its side length, measured in bits, must be **twice the bit-width of the largest operand** the unit is intended to support. For example, if the maximum operand size is 1024 bits, the matrix must be 2048 bits per side (i.e., 2048 × 2048 bits). This ensures sufficient space for representing all intermediate states and results without overflow or segmentation.
+
+For production-grade implementations, it is recommended to support operand sizes up to 4096 bits. Accordingly, the bit matrix should be at least **8192 × 8192 bits** in dimension. This configuration allows the MPU to handle high-precision multiplications required in cryptographic, scientific, and AI workloads, while maintaining linearity and minimizing computational overhead.
+
+The square matrix design is central to the algorithm’s ability to bypass traditional arithmetic operations. It enables deterministic placement of input values and facilitates direct bitstream scanning for result retrieval, forming the basis of a radically simplified and energy-efficient multiplication process.
+
+## Offset Matrix and Horizontal Brush Logic in the MPU Architecture
+
+In the proposed architecture of the Multi-Precision Unit (MPU), the two input operands—referred to as the multiplicand and the multiplier—are first analyzed to determine which of the two contains fewer bits set to 1. The operand with the lower bit density is designated as the **Offset Matrix**, due to its intrinsic role in defining the activation pattern across the computational grid.
+
+To determine the starting position of the computational brush on each horizontal line, the system may employ a diagonal scan mechanism. This scan is conceptualized as a 45-degree traversal along the main diagonal of the square bit matrix, beginning at the top-left vertex. For each row intersected by the diagonal, the presence of a bit set to 1 indicates the **offset position** where the horizontal brush will initiate its operation. Conversely, rows intersected by a 0 bit remain inactive, contributing to thermal efficiency by reducing unnecessary switching activity.
+
+It is important to note that the diagonal scan is not a mandatory physical implementation. An alternative approach involves directly analyzing the positions of bits set to 1 within the Offset Matrix and applying those positions as row-specific offsets. This method simplifies the logic and allows for more flexible hardware design.
+
+Once the offset positions are established, the system utilizes **Shift Register technology**, such as **Linear Feedback Shift Registers (LFSR)**, to propagate a consistent bit pattern across each active row. The pattern remains uniform across rows, but each row applies its unique offset, resulting in a staggered and efficient multiplication process. This mechanism forms the basis of the horizontal brush logic, enabling parallel and deterministic computation without traditional arithmetic operations.
+
+The combination of offset-based activation and LFSR-driven propagation allows the MPU to execute large-number multiplications with minimal energy consumption and maximal throughput, leveraging spatial memory placement rather than iterative computation.
+
+The following is a purely minimalist example to simplify the operation as much as possible. Suppose we want to handle multiplications with numbers of up to 3 bits, so we need a 6-bit matrix (3 x 2 = 6).
+
+| 0 | 0 | 0 | 0 | 0 | 0 |
+|---|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 0 | 0 | 0 |
