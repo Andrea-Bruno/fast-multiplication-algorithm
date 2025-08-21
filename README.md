@@ -50,7 +50,18 @@ Violators may be held liable for:
 
 The author reserves all rights to initiate legal proceedings in any competent jurisdiction to protect the integrity, exclusivity, and economic value of the work.
 
-## Presentation of the algorithm underlying technological innovation
+## Presentation of the Algorithm Underlying Technological Innovation
+
+The code presented below serves as a clear and academically rigorous demonstration of the logic and functioning of the fast multiplication algorithm. It is designed to be transparent and accessible, allowing researchers, engineers, and practitioners to understand the mathematical principles that underpin the innovation.
+
+The implementation is written in C#, a widely adopted programming language chosen for its readability and accessibility. However, it is important to emphasize that the algorithm itself is language-independent. The computational logic and mathematical structure are universal and can be expressed in any programming environment or hardware architecture.
+
+As evident from the example, the algorithm is currently implemented for execution on a CPU. Due to the byte-oriented architecture of conventional CPUs—organized into segments such as 8-bit, 16-bit, 32-bit, or 64-bit units—the algorithm must accommodate certain structural complexities. These constraints influence how calculations are performed and how data is processed internally.
+
+In contrast, when deployed on custom-designed hardware that is not segmented by byte boundaries, the computation becomes significantly more linear and efficient. The mathematical operations can be executed without the overhead imposed by traditional CPU architectures, resulting in simplified logic, higher performance, and substantial energy savings.
+
+Therefore, the current CPU-based code should be interpreted as a mathematical demonstration of the algorithm’s core logic. It is intended to provide the academic and technical community with a reference model, while the ultimate goal remains the deployment of this algorithm within dedicated hardware environments optimized for AI acceleration.
+
 
 ```charp
 
