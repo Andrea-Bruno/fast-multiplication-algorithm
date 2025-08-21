@@ -252,15 +252,20 @@ The updated matrix is shown below, with the diagonal cells reflecting the binary
 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 0 | 0 | 0 | 0 | 0 | 0 |
 
-### Offset Matrix and Pattern Propagation via LFSR
+### Pattern Propagation Using LFSR Technology (Single-Bit Distribution)
 
-In our example, both operands—3 and 5—have two bits set to 1, so either can be selected as the "offset matrix." For simplicity, we choose **3** (binary `110`) and place its bits along the diagonal of the 6×6 matrix. The remaining operand, **5** (binary `101`), is treated as the **pattern** to be propagated.
+In our example, both operands—3 and 5—have two bits set to 1, so either can be selected as the "offset matrix." We choose **3** (binary `110`) and place its bits along the diagonal of the 6×6 matrix. The remaining operand, **5** (binary `101`), is treated as the **pattern** to be propagated.
 
-Each row in the matrix corresponds to a bit position in the offset matrix. Where a diagonal cell contains a `1`, it signals that the row is active and the horizontal brush must initiate at that offset. The brush then propagates the pattern horizontally using **Shift Register technology**, specifically a **Linear-Feedback Shift Register (LFSR)**.
+Each row in the matrix corresponds to a bit position in the offset matrix. Where a diagonal cell contains a `1`, it signals that the row is active and the horizontal brush must initiate at that offset. Instead of replicating the entire pattern across the row, the system distributes the bits of the pattern **vertically**, assigning one bit per active row.
 
-The LFSR replicates the bit pattern of the second operand (`101`) across each active row, starting from the offset position indicated by the diagonal. This propagation is deterministic and efficient, allowing the multiplication logic to be executed without traditional arithmetic operations.
+This means:
+- The first active row receives the first bit of the pattern (`1`),
+- The second active row receives the second bit (`0`),
+- The third active row receives the third bit (`1`), and so on.
 
-The updated matrix below shows the diagonal offset flags in bold, and illustrates how the pattern would be applied horizontally on active rows:
+The propagation is performed using **Shift Register technology**, such as **Linear-Feedback Shift Registers (LFSR)**, which efficiently shift and place the bit at the correct offset position on each row.
+
+The updated matrix below 
 
 |     |     |     |     |     |     |
 |-----|-----|-----|-----|-----|-----|
