@@ -62,6 +62,17 @@ In contrast, when deployed on custom-designed hardware that is not segmented by 
 
 Therefore, the current CPU-based code should be interpreted as a mathematical demonstration of the algorithm’s core logic. It is intended to provide the academic and technical community with a reference model, while the ultimate goal remains the deployment of this algorithm within dedicated hardware environments optimized for AI acceleration.
 
+### Demonstrative Purpose and Academic Validity
+
+The algorithm implementation provided below is intended to serve as a demonstrative model of the underlying mathematical logic. In academic and technical contexts, a well-structured algorithm—expressed in code—can effectively substitute for a textual description of its functioning, offering clarity, precision, and reproducibility.
+
+This example is written in C#, a widely adopted programming language chosen for its readability and accessibility. However, the algorithm itself is not bound to any specific language. Its core logic is language-agnostic and can be implemented in any computational environment, including hardware-level architectures.
+
+It is important to note that the current implementation targets execution on conventional CPUs. Due to the segmented nature of CPU architectures—organized into byte-based units such as 8-bit, 16-bit, 32-bit, or 64-bit—the algorithm must accommodate structural constraints that affect how data is processed and how operations are performed.
+
+In contrast, when deployed on custom-designed hardware free from byte segmentation, the computation becomes significantly more linear and efficient. The absence of architectural fragmentation allows for simplified execution paths, reduced overhead, and enhanced performance, with corresponding gains in energy efficiency.
+
+Therefore, the code presented here should be interpreted as a mathematical demonstration of the algorithm’s logic, intended to provide the academic and technical community with a transparent and verifiable reference. It does not represent the final optimized implementation, which will be adapted for dedicated hardware environments as part of the broader AI Accelerator initiative.
 
 ```charp
 
