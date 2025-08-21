@@ -1,4 +1,4 @@
-# AI Accelerator
+ï»¿# AI Accelerator
 
 ## About the Author
 
@@ -6,7 +6,7 @@ Andrea Bruno, born in 1972, is an independent inventor and researcher with a lif
 
 In the 1980s, he began developing early artificial intelligence algorithms, including a chess engine that was published in the magazine *CHIP*. Unlike traditional brute-force engines, his software was powered by a self-designed AI logic, demonstrating a pioneering approach to intelligent computation.
 
-The mathematical and algorithmic work presented in this repository did not require extensive effort or formal tools. In fact, the core innovation—the fast multiplication algorithm—was conceived intuitively during sleep, without the need for pen, paper, or prolonged analysis. This intuitive process reflects Andrea’s unique cognitive style and his ability to internalize and synthesize complex systems with minimal external input.
+The mathematical and algorithmic work presented in this repository did not require extensive effort or formal tools. In fact, the core innovationâ€”the fast multiplication algorithmâ€”was conceived intuitively during sleep, without the need for pen, paper, or prolonged analysis. This intuitive process reflects Andreaâ€™s unique cognitive style and his ability to internalize and synthesize complex systems with minimal external input.
 
 Through this project, Andrea Bruno aims not only to contribute to the advancement of AI computation, but also to establish a clear and enduring association between his name and the intellectual property he has created.
 
@@ -18,19 +18,19 @@ Several additional algorithms have already been conceived and are in development
 
 To illustrate this concept, consider the analogy of automotive engineering. While a Formula 1 engine and a standard car engine may share similar materials and basic mechanical principles, the arrangement, precision, and advanced technologies employed in the former result in vastly superior performance. Likewise, the AI Accelerator project seeks to embed cutting-edge computational techniques into the "engine" of AI systems.
 
-The Fast Multiplication Algorithm can be viewed as one such enhancement—akin to the transition from carburetors to fuel injectors in engine design. When paired with dedicated hardware, this algorithm represents a leap in computational efficiency, enabling faster and more energy-conscious processing.
+The Fast Multiplication Algorithm can be viewed as one such enhancementâ€”akin to the transition from carburetors to fuel injectors in engine design. When paired with dedicated hardware, this algorithm represents a leap in computational efficiency, enabling faster and more energy-conscious processing.
 
-Historically, companies like NVIDIA have leveraged GPU architectures originally designed for gaming, which—by fortunate coincidence—proved highly effective for AI computation. However, as both science and engineering demonstrate, general-purpose solutions are often outperformed by purpose-built technologies. This project embraces that principle, aiming to deliver targeted innovations that surpass conventional architectures in both raw performance and energy efficiency.
+Historically, companies like NVIDIA have leveraged GPU architectures originally designed for gaming, whichâ€”by fortunate coincidenceâ€”proved highly effective for AI computation. However, as both science and engineering demonstrate, general-purpose solutions are often outperformed by purpose-built technologies. This project embraces that principle, aiming to deliver targeted innovations that surpass conventional architectures in both raw performance and energy efficiency.
 
 While the Fast Multiplication Algorithm is a key innovation, it is not intended to be presented as a standalone solution capable of accelerating AI computation on its own. The true impact emerges when multiple aspects of AI processing are optimized through targeted, purpose-built technologies. When each computational layer is enhanced with dedicated solutions, the cumulative effect yields significant improvements in both energy efficiency and computational throughput.
 
 The AI Accelerator project already includes the design of additional algorithms and custom chip architectures aimed at accelerating AI workloads in other domains. These components will be published and disclosed progressively, forming part of a broader technical vision focused on high-performance, domain-specific computing for artificial intelligence.
 
-## Fast Multiplication Algorithm – README
+## Fast Multiplication Algorithm â€“ README
 
 ### Legal Notice and Copyright Protection
 
-All content described, referenced, or included in this document—including algorithmic concepts, implementation details, and the underlying intellectual framework—is protected under the exclusive copyright license authored by Andrea Bruno.
+All content described, referenced, or included in this documentâ€”including algorithmic concepts, implementation details, and the underlying intellectual frameworkâ€”is protected under the exclusive copyright license authored by Andrea Bruno.
 
 This license strictly prohibits any form of reproduction, modification, redistribution, or commercial use of the material without prior written consent. The publication of this project serves as demonstrative evidence of authorship and establishes a verifiable creation date, while preserving the author's right to pursue patent protection in relevant jurisdictions.
 
@@ -38,19 +38,19 @@ For the complete and legally binding version of the license, please refer to the
 
 ### Legal Enforcement and Consequences of Violation
 
-The intellectual property contained in this repository—including algorithmic concepts, technical methods, and original implementations—is protected under exclusive copyright and is subject to legal safeguards.
+The intellectual property contained in this repositoryâ€”including algorithmic concepts, technical methods, and original implementationsâ€”is protected under exclusive copyright and is subject to legal safeguards.
 
 Any use of this content in external projects, academic publications, or patent filings without a formal transfer of intellectual property rights constitutes a serious violation. Such actions go beyond plagiarism and may be classified as misappropriation or infringement under applicable laws.
 
 Under **United States law**, violators may be prosecuted pursuant to:
-- **17 U.S. Code § 501** – Copyright infringement
-- **18 U.S. Code § 1832** – Theft of trade secrets (Economic Espionage Act)
-- **35 U.S. Code § 271** – Patent infringement, if derivative patents are filed unlawfully
+- **17 U.S. Code Â§ 501** â€“ Copyright infringement
+- **18 U.S. Code Â§ 1832** â€“ Theft of trade secrets (Economic Espionage Act)
+- **35 U.S. Code Â§ 271** â€“ Patent infringement, if derivative patents are filed unlawfully
 
 Under **European Union law**, infringement may be pursued under:
-- **Directive 2004/48/EC** – Enforcement of intellectual property rights
-- **Directive 2001/29/EC** – Copyright in the information society
-- **Regulation (EU) 2019/790** – Digital Single Market and protection of non-authorized uses
+- **Directive 2004/48/EC** â€“ Enforcement of intellectual property rights
+- **Directive 2001/29/EC** â€“ Copyright in the information society
+- **Regulation (EU) 2019/790** â€“ Digital Single Market and protection of non-authorized uses
 
 Violators may be held liable for:
 - Economic damages, including loss of commercial opportunity
@@ -65,23 +65,23 @@ The code presented below serves as a clear and academically rigorous demonstrati
 
 The implementation is written in C#, a widely adopted programming language chosen for its readability and accessibility. However, it is important to emphasize that the algorithm itself is language-independent. The computational logic and mathematical structure are universal and can be expressed in any programming environment or hardware architecture.
 
-As evident from the example, the algorithm is currently implemented for execution on a CPU. Due to the byte-oriented architecture of conventional CPUs—organized into segments such as 8-bit, 16-bit, 32-bit, or 64-bit units—the algorithm must accommodate certain structural complexities. These constraints influence how calculations are performed and how data is processed internally.
+As evident from the example, the algorithm is currently implemented for execution on a CPU. Due to the byte-oriented architecture of conventional CPUsâ€”organized into segments such as 8-bit, 16-bit, 32-bit, or 64-bit unitsâ€”the algorithm must accommodate certain structural complexities. These constraints influence how calculations are performed and how data is processed internally.
 
 In contrast, when deployed on custom-designed hardware that is not segmented by byte boundaries, the computation becomes significantly more linear and efficient. The mathematical operations can be executed without the overhead imposed by traditional CPU architectures, resulting in simplified logic, higher performance, and substantial energy savings.
 
-Therefore, the current CPU-based code should be interpreted as a mathematical demonstration of the algorithm’s core logic. It is intended to provide the academic and technical community with a reference model, while the ultimate goal remains the deployment of this algorithm within dedicated hardware environments optimized for AI acceleration.
+Therefore, the current CPU-based code should be interpreted as a mathematical demonstration of the algorithmâ€™s core logic. It is intended to provide the academic and technical community with a reference model, while the ultimate goal remains the deployment of this algorithm within dedicated hardware environments optimized for AI acceleration.
 
 ### Demonstrative Purpose and Academic Validity
 
-The algorithm implementation provided below is intended to serve as a demonstrative model of the underlying mathematical logic. In academic and technical contexts, a well-structured algorithm—expressed in code—can effectively substitute for a textual description of its functioning, offering clarity, precision, and reproducibility.
+The algorithm implementation provided below is intended to serve as a demonstrative model of the underlying mathematical logic. In academic and technical contexts, a well-structured algorithmâ€”expressed in codeâ€”can effectively substitute for a textual description of its functioning, offering clarity, precision, and reproducibility.
 
 This example is written in C#, a widely adopted programming language chosen for its readability and accessibility. However, the algorithm itself is not bound to any specific language. Its core logic is language-agnostic and can be implemented in any computational environment, including hardware-level architectures.
 
-It is important to note that the current implementation targets execution on conventional CPUs. Due to the segmented nature of CPU architectures—organized into byte-based units such as 8-bit, 16-bit, 32-bit, or 64-bit—the algorithm must accommodate structural constraints that affect how data is processed and how operations are performed.
+It is important to note that the current implementation targets execution on conventional CPUs. Due to the segmented nature of CPU architecturesâ€”organized into byte-based units such as 8-bit, 16-bit, 32-bit, or 64-bitâ€”the algorithm must accommodate structural constraints that affect how data is processed and how operations are performed.
 
 In contrast, when deployed on custom-designed hardware free from byte segmentation, the computation becomes significantly more linear and efficient. The absence of architectural fragmentation allows for simplified execution paths, reduced overhead, and enhanced performance, with corresponding gains in energy efficiency.
 
-Therefore, the code presented here should be interpreted as a mathematical demonstration of the algorithm’s logic, intended to provide the academic and technical community with a transparent and verifiable reference. It does not represent the final optimized implementation, which will be adapted for dedicated hardware environments as part of the broader AI Accelerator initiative.
+Therefore, the code presented here should be interpreted as a mathematical demonstration of the algorithmâ€™s logic, intended to provide the academic and technical community with a transparent and verifiable reference. It does not represent the final optimized implementation, which will be adapted for dedicated hardware environments as part of the broader AI Accelerator initiative.
 
 ```charp
 
@@ -140,10 +140,48 @@ It is important to clarify that the effectiveness of an algorithm is not necessa
 
 The fast multiplication algorithm presented here, when transposed onto dedicated hardware, can be executed with minimal computational effort. In its optimized form, the algorithm does not require iterative or force-based computation. Instead, it operates by placing the input arrays (`byte[] multiplicand`, `byte[] multiplier`) into memory in a specific configuration, which will be described in detail in the following sections of this document. The result can then be retrieved through a single linear scan of the memory as a bitstream, effectively bypassing traditional arithmetic operations.
 
-This approach leverages the principle that, on custom hardware free from byte-segmented constraints, computation can be redefined as structured memory access. Unlike conventional CPUs—where processing is segmented into 8, 16, 32, or 64-bit units, introducing architectural overhead—the dedicated hardware envisioned for this algorithm allows for seamless bit-level manipulation. This results in a dramatically simplified execution path, enhanced performance, and significant energy savings.
+This approach leverages the principle that, on custom hardware free from byte-segmented constraints, computation can be redefined as structured memory access. Unlike conventional CPUsâ€”where processing is segmented into 8, 16, 32, or 64-bit units, introducing architectural overheadâ€”the dedicated hardware envisioned for this algorithm allows for seamless bit-level manipulation. This results in a dramatically simplified execution path, enhanced performance, and significant energy savings.
 
-Therefore, the current CPU-based implementation serves as a mathematical demonstration of the algorithm’s logic. The ultimate goal is to deploy this logic on specialized hardware where its full potential can be realized, transforming multiplication from a computational task into a deterministic memory operation.
+Therefore, the current CPU-based implementation serves as a mathematical demonstration of the algorithmâ€™s logic. The ultimate goal is to deploy this logic on specialized hardware where its full potential can be realized, transforming multiplication from a computational task into a deterministic memory operation.
 
 As may already be evident, when transposed onto dedicated hardware, this algorithm can be executed without the use of traditional computational operators or arithmetic calculations. This architectural simplification significantly reduces the required circuitry and minimizes clock cycles, resulting in maximum performance with optimal energy efficiency.
 
-By eliminating the need for complex processing units and iterative logic, the algorithm enables a streamlined execution model that relies solely on structured memory placement and deterministic bit-level access. This not only enhances speed and scalability, but also aligns with the principles of low-power, high-throughput computing—making it particularly suitable for next-generation AI acceleration platforms.
+By eliminating the need for complex processing units and iterative logic, the algorithm enables a streamlined execution model that relies solely on structured memory placement and deterministic bit-level access. This not only enhances speed and scalability, but also aligns with the principles of low-power, high-throughput computingâ€”making it particularly suitable for next-generation AI acceleration platforms.
+
+## Scientific Relevance and Commercial Value of Primitive Algorithms
+
+Multiplication is one of the most fundamental operations in mathematicsâ€”classified as a primitive function due to its foundational role in arithmetic and computation. As such, multiplication algorithms are among the most widely studied and frequently applied across virtually every domain of science and engineering.
+
+Their applications include, but are not limited to:
+- **Cryptography**: Modular multiplications are central to RSA, ECC, and other public-key systems.
+- **Artificial Intelligence**: Neural networks rely heavily on matrix multiplications and tensor operations.
+- **Scientific Computing**: Simulations in physics, biology, and chemistry require high-precision arithmetic.
+- **Graphics and Signal Processing**: Transformations and filters often involve large-scale multiplications.
+
+Given this ubiquity, any innovation in multiplication algorithms has the potential to impact a wide range of industries. The fast multiplication algorithm presented in this project, when executed on dedicated hardwareâ€”as originally conceivedâ€”represents a generational leap in computational design. By eliminating traditional arithmetic operations and relying instead on structured memory placement and bitstream scanning, the algorithm achieves unprecedented efficiency in both speed and energy consumption.
+
+Primitive algorithms are the subject of intense academic scrutiny precisely because they underpin so many systems. Countless researchers have attempted to improve upon them, and breakthroughs are rare. When such breakthroughs do occur, their commercial value can be substantialâ€”often reaching into the millions of dollars.
+
+### Notable Examples of High-Value Algorithms
+
+- **RSA Algorithm**: While not a multiplication algorithm per se, RSA relies on modular exponentiation, which is built on repeated multiplications. The original patent (U.S. Patent No. 4,405,829) was licensed commercially and generated millions in revenue before expiring.
+  
+- **SchÃ¶nhageâ€“Strassen Algorithm**: Used for multiplying extremely large integers, this algorithm was implemented in software like GMP (GNU Multiple Precision Arithmetic Library), which powers many cryptographic and scientific applications. Its efficiency has enabled breakthroughs in prime number discovery and Ï€ computation.
+
+- **Fast Fourier Transform (FFT)**: Though not a multiplication algorithm directly, FFT reduces the complexity of convolution operations, which involve multiplication. The Cooleyâ€“Tukey FFT algorithm has been foundational in signal processing and has enabled entire industriesâ€”from telecommunications to audio engineering.
+
+These examples illustrate that technical algorithms, especially those with broad applicability and performance advantages, can become invaluable assets. Their value lies not only in their intellectual merit but in their ability to unlock new capabilities, reduce costs, and enable technologies that were previously impractical.
+
+The fast multiplication algorithm presented here, if adopted in scientific or industrial contexts, holds similar potential. Its simplicity, scalability, and compatibility with custom hardware make it a candidate for integration into next-generation AI accelerators, cryptographic processors, and high-performance computing platforms.
+
+### Potential Cryptanalytic Implications
+
+While the fast multiplication algorithm presented in this project is not designed to break RSA encryption, it is built upon a mathematical intuition that may hold deeper implications. The core ideaâ€”currently undisclosedâ€”suggests a novel way of approaching multiplication that, if reversed or reinterpreted by experts in number theory and cryptography, could inspire alternative strategies for tackling problems such as large prime factorization.
+
+RSA encryption relies on the computational difficulty of factoring the product of two large prime numbers. The absence of an efficient algorithm for this task is what ensures the security of RSA-based systems. However, the logic underpinning this algorithm introduces a new computational paradigm that bypasses traditional arithmetic operations, and instead leverages structured memory access and bit-level manipulation.
+
+It is conceivable that a team of highly qualified mathematicians could study this paradigm and, through reverse engineering or inversion of its principles, explore new avenues in cryptanalysis. Such exploration might challenge long-standing assumptions about the hardness of certain problems, including those on which RSA is based.
+
+The author of this algorithm openly declares that the mathematical foundations and logical principles underlying the algorithmâ€”not the algorithm itselfâ€”may serve as a scientific basis for developing techniques capable of compromising RSA encryption. Given that RSAâ€™s security relies on the absence of an efficient method for factoring large prime products, any breakthrough in this domain could have serious implications for global cybersecurity.
+
+For this reason, and to avoid potential harm to the public and critical infrastructure, the author has chosen not to disclose the core theoretical constructs that inspired the algorithm. The decision reflects a commitment to responsible innovation and the ethical handling of sensitive mathematical insights that may, if misused, undermine the integrity of encrypted communication systems worldwide.
